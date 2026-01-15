@@ -12,11 +12,13 @@ title: 首页
       <p class="hero-subtitle">一名热爱技术的开发者，专注于分享知识和行业洞察</p>
       <p class="hero-description">{{ site.description }}</p>
       <div class="github-stats">
-        <div class="stat-item">
-          <span class="stat-icon">⭐</span>
-          <span class="stat-label">GitHub Stars:</span>
-          <span class="stat-value" id="github-stars">加载中...</span>
-        </div>
+        <a href="https://github.com/rabbitdeng" target="_blank" rel="noopener noreferrer" class="stat-link">
+          <div class="stat-item">
+            <span class="stat-icon">⭐</span>
+            <span class="stat-label">GitHub Stars:</span>
+            <span class="stat-value" id="github-stars">加载中...</span>
+          </div>
+        </a>
       </div>
       <div class="profile-links">
         <a href="{{ '/about' | relative_url }}" class="profile-link">关于我</a>
