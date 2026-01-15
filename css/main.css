@@ -988,6 +988,7 @@ pre:hover .code-copy-btn {
 
 .highlight .il {
   color: #b5cea8;
+}
 
 /* Blockquotes */
 blockquote {
@@ -1049,6 +1050,10 @@ th {
 .post-like {
   display: flex;
   align-items: center;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
 }
 
 .like-button {
@@ -1058,24 +1063,36 @@ th {
   background-color: #fff;
   color: #666;
   border: 1px solid #ddd;
-  border-radius: 25px;
-  padding: 0.5rem 1.2rem;
-  font-size: 0.9rem;
+  border-radius: 50px;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateZ(0);
 }
 
 .like-button:hover {
-  background-color: #f8f9fa;
+  background-color: #007bff;
+  color: #fff;
   border-color: #007bff;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
 }
 
 .like-button:active {
-  transform: translateY(0);
+  transform: translateY(-1px);
+}
+
+.like-button:hover #like-icon {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+#like-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
 }
 
 /* 页脚统计样式 */
@@ -1105,5 +1122,15 @@ th {
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
+  }
+  
+  .post-like {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .like-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
   }
 }
