@@ -75,204 +75,368 @@ main {
 /* Home Page */
 .home-page {
   padding: 2rem 0;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 英雄区 */
 .hero-section {
   text-align: center;
-  margin-bottom: 2.5rem;
-  padding: 2.5rem 0;
+  margin-bottom: 3rem;
+  padding: 3.5rem 2rem;
   background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
   color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(10px, -10px) rotate(5deg);
+  }
 }
 
 .hero-section h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
-  opacity: 0.95;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  opacity: 0.98;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .hero-description {
-  font-size: 1rem;
-  max-width: 700px;
+  font-size: 1.05rem;
+  max-width: 750px;
   margin: 0 auto;
-  opacity: 0.9;
+  opacity: 0.95;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
-/* About Me Section */
+/* 关于我区域 */
 .about-section {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .about-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #333;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
   text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .about-text p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
   color: #555;
+  font-size: 1.02rem;
 }
 
 .tech-stack h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .tech-tag {
-  background-color: #f0f0f0;
+  background-color: #f0f4f8;
   color: #333;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .tech-tag:hover {
   background-color: #007bff;
   color: #fff;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
 /* 最新文章 */
 .latest-posts {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .latest-posts h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.8rem;
+  font-size: 2rem;
+  margin-bottom: 2.2rem;
   color: #2c3e50;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.latest-posts h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  border-radius: 2px;
 }
 
 /* 文章卡片 */
+.posts-list {
+  display: grid;
+  gap: 2rem;
+}
+
 .post-item {
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
-  margin-bottom: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
   transition: all 0.3s ease;
   border-left: 4px solid transparent;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.post-item:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.post-item:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.post-item:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+.post-item:nth-child(4) {
+  animation-delay: 0.8s;
 }
 
 .post-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   border-left-color: #007bff;
 }
 
 .post-header {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .post-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f4f8;
 }
 
 .post-date {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #666;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-date::before {
+  content: '📅';
+  font-size: 1rem;
 }
 
 .post-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .post-tag {
   background-color: #e7f3ff;
   color: #007bff;
-  padding: 0.3rem 0.8rem;
-  border-radius: 16px;
-  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 500;
   transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 123, 255, 0.1);
 }
 
 .post-tag:hover {
   background-color: #007bff;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
 }
 
 .post-item h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .post-item h3 a {
   color: #2c3e50;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, #007bff, #007bff);
+  background-size: 0% 2px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 3px;
 }
 
 .post-item h3 a:hover {
   color: #007bff;
+  background-size: 100% 2px;
+}
+
+.post-excerpt {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #555;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+.read-more {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+  font-size: 0.95rem;
+}
+
+.read-more:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  padding: 0.75rem 1.75rem;
+}
+
+.read-more::after {
+  content: ' →';
+  transition: margin-left 0.3s ease;
+}
+
+.read-more:hover::after {
+  margin-left: 5px;
 }
 
 /* 分页样式 */
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
-  gap: 0.8rem;
+  margin-top: 3.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.9s both;
 }
 
 .pagination-link {
   color: #666;
   background-color: #fff;
-  padding: 0.7rem 1.2rem;
-  border-radius: 6px;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
   text-decoration: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   font-weight: 500;
   border: 1px solid #e0e0e0;
+  font-size: 0.95rem;
 }
 
 .pagination-link:hover {
   background-color: #007bff;
   color: #fff;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   border-color: #007bff;
-  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
 .pagination-link.current {
@@ -280,6 +444,7 @@ main {
   color: #fff;
   font-weight: 600;
   border-color: #007bff;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2);
 }
 
 .pagination-link.disabled {
@@ -292,30 +457,110 @@ main {
   color: #666;
   transform: none;
   border-color: #e0e0e0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+  .home-page {
+    padding: 1.5rem 0;
+  }
+  
+  .hero-section {
+    padding: 2.5rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+  
   .hero-section h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
   
   .latest-posts h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    margin-bottom: 1.8rem;
   }
   
   .post-item {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
   }
   
   .post-item h3 {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
+  
+  .post-excerpt {
+    font-size: 1rem;
+  }
+  
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* 文字优化 */
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* 阴影效果 */
+.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+/* 圆角优化 */
+.rounded-sm {
+  border-radius: 6px;
+}
+
+.rounded-md {
+  border-radius: 8px;
+}
+
+.rounded-lg {
+  border-radius: 12px;
+}
+
+.rounded-xl {
+  border-radius: 16px;
 }
 
 /* Blog Posts */
