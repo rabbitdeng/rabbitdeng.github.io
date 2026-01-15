@@ -18,7 +18,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1' # 使用兼容Jekyll 3.9.0的Ruby版本
+          ruby-version: '3.2' # 使用兼容zeitwerk-2.7.4的Ruby版本
           bundler-cache: true
 
       - name: Build site
