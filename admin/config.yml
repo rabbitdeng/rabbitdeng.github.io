@@ -3,7 +3,7 @@ backend:
   name: github
   repo: rabbitdeng/rabbitdeng.github.io
   branch: main
-  auth_endpoint: https://api.netlify.com/auth
+  auth_endpoint: https://auth.netlify.com/github
   app_id: Ov23liADpsvXfqV1SbQw  # 替换为你的Client ID
 
 media_folder: "assets/images"
