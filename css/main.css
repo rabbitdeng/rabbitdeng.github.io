@@ -10,7 +10,7 @@ body {
   line-height: 1.8;
   color: #333;
   background-color: #f8f9fa;
-  background-image: url("/background.jpf");
+  background-image: url("/background-optimized.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
