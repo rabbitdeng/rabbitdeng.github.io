@@ -52,6 +52,14 @@ layout: default
         <span id="like-count">0</span>
       </button>
     </div>
+    
+    <!-- 收藏功能 -->
+    <div class="post-bookmark">
+      <button id="bookmark-btn" class="bookmark-button" onclick="bookmarkPage()">
+        <span id="bookmark-icon">⭐</span>
+        <span id="bookmark-text">收藏</span>
+      </button>
+    </div>
   </div>
   
   <script>
@@ -98,6 +106,46 @@ layout: default
       
       // 更新显示
       document.getElementById('like-count').textContent = likeCount;
+    }
+    
+    function bookmarkPage() {
+      const bookmarkBtn = document.getElementById('bookmark-btn');
+      const bookmarkIcon = document.getElementById('bookmark-icon');
+      const bookmarkText = document.getElementById('bookmark-text');
+      
+      try {
+        // 尝试使用现代浏览器API
+        if (navigator.clipboard) {
+          // 检查是否支持书签API
+          if (window.sidebar && window.sidebar.addPanel) {
+            // Firefox
+            window.sidebar.addPanel(document.title, window.location.href, '');
+          } else if (window.external && ('AddFavorite' in window.external)) {
+            // IE
+            window.external.AddFavorite(window.location.href, document.title);
+          } else if (navigator.userAgent.includes('Chrome') || navigator.userAgent.includes('Safari')) {
+            // Chrome/Safari
+            alert('请按 Ctrl+D (Windows) 或 Cmd+D (Mac) 添加到收藏夹');
+          }
+          
+          // 更新按钮状态
+          bookmarkIcon.textContent = '🌟';
+          bookmarkText.textContent = '已收藏';
+          bookmarkBtn.disabled = true;
+          
+          // 添加临时提示
+          const tempMsg = document.createElement('div');
+          tempMsg.textContent = '文章已添加到收藏夹！';
+          tempMsg.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000;';
+          document.body.appendChild(tempMsg);
+          setTimeout(() => {
+            tempMsg.remove();
+          }, 3000);
+        }
+      } catch (error) {
+        console.error('收藏失败:', error);
+        alert('收藏功能暂不可用，请手动添加到收藏夹');
+      }
     }
   </script>
 </article>

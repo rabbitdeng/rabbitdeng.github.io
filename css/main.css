@@ -1156,7 +1156,7 @@ th {
   display: flex;
   align-items: center;
   position: fixed;
-  bottom: 2rem;
+  bottom: 8rem;
   right: 2rem;
   z-index: 1000;
 }
@@ -1196,6 +1196,64 @@ th {
 }
 
 #like-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* 收藏按钮样式 */
+.post-bookmark {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.bookmark-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateZ(0);
+}
+
+.bookmark-button:hover {
+  background-color: #ffc107;
+  color: #fff;
+  border-color: #ffc107;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
+}
+
+.bookmark-button:active {
+  transform: translateY(-1px);
+}
+
+.bookmark-button:hover #bookmark-icon {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.bookmark-button:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  border-color: #dee2e6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#bookmark-icon {
   font-size: 1.2rem;
   transition: transform 0.3s ease;
 }
