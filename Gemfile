@@ -8,4 +8,5 @@ require_relative 'init'
 gem "github-pages"
 gem "webrick"
 gem "csv"
+gem "bigdecimal"
 

@@ -13,6 +13,7 @@ theme: minima
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-paginate
 markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
