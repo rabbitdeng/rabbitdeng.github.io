@@ -165,8 +165,16 @@ main {
 .about-section h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #ffffff;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .about-content {
@@ -174,18 +182,24 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .about-text p {
   margin-bottom: 1rem;
   line-height: 1.7;
-  color: #555;
+  color: #333;
+  font-weight: 500;
 }
 
 .tech-stack h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
   color: #333;
+  font-weight: 600;
 }
 
 .tech-tags {
@@ -202,12 +216,14 @@ main {
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tech-tag:hover {
   background-color: #007bff;
   color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
 }
 
 /* 最新文章 */
@@ -218,9 +234,17 @@ main {
 .latest-posts h2 {
   font-size: 1.8rem;
   margin-bottom: 1.8rem;
-  color: #2c3e50;
+  color: #ffffff;
   text-align: center;
   font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* 文章卡片 */
