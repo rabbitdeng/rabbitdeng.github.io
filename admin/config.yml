@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: rabbitdeng/rabbitdeng.github.io
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "posts"
+    label: "文章"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "日期", name: "date", widget: "datetime" }
+      - { label: "作者", name: "author", widget: "string", default: "邓果垚" }
+      - { label: "标签", name: "tags", widget: "list", required: false }
+      - { label: "正文", name: "body", widget: "markdown" }

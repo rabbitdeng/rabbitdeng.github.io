@@ -6,7 +6,21 @@
         <li><a href="{{ site.baseurl }}/">首页</a></li>
         <li><a href="{{ site.baseurl }}/about.html">关于</a></li>
         <li><a href="{{ site.baseurl }}/archive.html">归档</a></li>
+        <li><a href="{{ site.baseurl }}/admin/">管理后台</a></li>
       </ul>
     </nav>
   </div>
 </header>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
