@@ -4,7 +4,7 @@ backend:
   repo: rabbitdeng/rabbitdeng.github.io
   branch: main
   auth_endpoint: https://api.netlify.com/auth
-  app_id: Ov23liv1uiUYKONNrnll  # 替换为你的Client ID
+  app_id: Ov23liADpsvXfqV1SbQw  # 替换为你的Client ID
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
