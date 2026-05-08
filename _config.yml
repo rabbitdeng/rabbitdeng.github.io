@@ -3,6 +3,7 @@ title: BunnyRabbit的技术博客
 description: 专注于分享技术经验、编程技巧和行业洞察的个人博客
 author: BunnyRabbit
 email: 741533684@qq.com
+github_username: rabbitdeng
 
 baseurl: "" # 网站的子路径，例如 /blog
 url: "https://rabbitdeng.github.io" # 网站的基本域名和协议
@@ -17,7 +18,7 @@ plugins:
 markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title/ # 文章链接格式
-future: true # 允许处理未来日期的文章
+future: false # 不发布未来日期的文章
 
 # 排除处理的文件和目录
 # 以下项目默认不会被处理

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,21 +80,6 @@
         // 将按钮添加到代码块中
         pre.appendChild(copyBtn);
       });
-      
-      // 获取GitHub Stars数量
-      const githubStarsElement = document.getElementById('github-stars');
-      if (githubStarsElement) {
-        fetch('https://api.github.com/users/rabbitdeng/repos?per_page=100')
-          .then(response => response.json())
-          .then(repos => {
-            const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
-            githubStarsElement.textContent = totalStars;
-          })
-          .catch(err => {
-            console.error('获取GitHub Stars失败:', err);
-            githubStarsElement.textContent = '获取失败';
-          });
-      }
       
       // 阅读进度条功能
       const readingProgress = document.getElementById('reading-progress');
